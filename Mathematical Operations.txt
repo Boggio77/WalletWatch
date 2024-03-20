@@ -1,0 +1,5 @@
+# A=P×(1+(r/n))^nt is the formula i will be utilizing to calculate the savings interest as this formula will allow me to calculate both loan and savings interest. This is the formula for calculating compound interest
+
+# For the income and expense calculations I plan to use basic math calculations in order to add or subtract from the variables accordingly
+
+# Matplotlib is a popular library in Python for creating static, animated, and interactive visualizations. I will be utilizing functions from this library to creating pie charts that will properly display user data
