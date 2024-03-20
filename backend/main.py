@@ -26,5 +26,14 @@ try:
 except:
     print("Wrong credentials idiot")
 
-
+#signup
+email=input('Enter your email, dumbass')
+password=input('Enter your password')
+confirmpass=input('Confirm Password')
+if password==confirmpass:
+    try: 
+        auth.create_user_with_email_and_password(email,password)
+        print('Account Registered')
+    except:
+        print('Email already exists, try again idiot')
 
