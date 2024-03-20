@@ -22,7 +22,7 @@ email = input("Email Address: ")
 password = input("Password: ")
 try:
     auth.sign_in_with_email_and_password(email, password)
-    print("Successful Sign in!")
+    print("Hope you didn't think too hard on that.")
 except:
     print("Wrong credentials idiot")
 
