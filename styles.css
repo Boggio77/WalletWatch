@@ -2,8 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to top, #3f3636, #1f1a1a, #000000);
-    background-size: 100% 200%;
+    background: linear-gradient(to top, #695d5d, #000000);
+    background-size: 100% 400%;
     animation: gradientScroll 1ms linear infinite;
     height: 100%;
 }
