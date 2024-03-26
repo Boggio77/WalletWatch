@@ -1,0 +1,18 @@
+{
+    "pieChartData": {
+      "slice1": {
+        "label": "Slice 1",
+        "value": 30
+      },
+      "slice2": {
+        "label": "Slice 2",
+        "value": 20
+      },
+      "slice3": {
+        "label": "Slice 3",
+        "value": 50
+      }
+
+    }
+  }
+  

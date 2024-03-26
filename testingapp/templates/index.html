@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pie Chart Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <h1>Pie Chart Generator</h1>
+    <div>
+        <label for="slice1">Slice 1:</label>
+        <input type="number" id="slice1" placeholder="Value for Slice 1">
+        <label for="slice2">Slice 2:</label>
+        <input type="number" id="slice2" placeholder="Value for Slice 2">
+        <label for="slice3">Slice 3:</label>
+        <input type="number" id="slice3" placeholder="Value for Slice 3">
+    </div>
+
+    <button onclick="generatePieChart()">Generate Pie Chart</button>
+    <canvas id="myChart" width="400" height="400"></canvas>
+
+    <script src="testingapp/static/script.js"></script>
+</body>
+</html>
