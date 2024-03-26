@@ -17,12 +17,13 @@
         <button onclick="location.href='index.html'" type="button">Home</button>
         <h1>Expense Tracker</h1>
 
-        <!-- Income Form -->
-        <form id="income-form">
-            <label for="income">Monthly Income:</label>
-            <input type="number" id="income" name="income" step="0.01" value="">
-            <button type="button" onclick="saveIncome()">Save Income</button>
-        </form>
+     <!-- Income Form -->
+     <form id="income-form">
+        <label for="income">Monthly Income:</label>
+        <input type="number" id="income" name="income" value="">
+        <button type="button" onclick="saveIncome()">Save Income</button>
+    </form>
+
 
         <hr>
 
@@ -37,7 +38,7 @@
             <label for="title">Title:</label>
             <input type="text" id="title" name="title">
             <label for="amount">Amount:</label>
-            <input type="number" id="amount" name="amount" step="0.01">
+            <input type="number" id="amount" name="amount">
             <button type="button" onclick="addExpense()">Add Expense</button>
         </form>
 
@@ -49,6 +50,6 @@
         <!-- Pie Chart -->
         <canvas id="expense-pie-chart" width="400" height="400"></canvas>
     </div>
-    <script src="../static/script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>

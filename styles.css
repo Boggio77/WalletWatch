@@ -19,12 +19,20 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 600px;
     margin: 30px auto;
     padding: 50px;
     background-color: #404040;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.img-container {
+    text-align: center;
+    margin-top: 20px; /* Adjust margin as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1, h2, h3 {

@@ -1,17 +1,29 @@
-// Function to save income
-function saveIncome() {
-    var income = parseFloat(document.getElementById('income').value);
-    if (!isNaN(income)) {
-        var currentIncome = parseFloat(document.getElementById('budget-remaining').textContent);
-        var totalBudget = currentIncome + income;
-        document.getElementById('budget-remaining').textContent = totalBudget.toFixed(2);
 
-        // Update the pie chart
-        updatePieChart();
-    } else {
-        alert('Please enter a valid income amount.');
+    // Function to save income
+    function saveIncome() {
+        var incomeInput = document.getElementById('income');
+        var income = parseFloat(incomeInput.value);
+        
+        if (!isNaN(income)) {
+            var currentBudget = parseFloat(document.getElementById('budget-remaining').textContent);
+            var totalBudget = currentBudget + income;
+            document.getElementById('budget-remaining').textContent = totalBudget.toFixed(2);
+            
+            // Clear the input field
+            incomeInput.value = '';
+            
+            // Update the pie chart
+            updatePieChart();
+        } else {
+            alert('Please enter a valid income amount.');
+        }
+    
+
+    // Call the updatePieChart function when the page loads
+    updatePieChart();
+
     }
-}
+
 
 // Function to update pie chart
 function updatePieChart() {
@@ -78,14 +90,15 @@ window.onload = function() {
 };
 
 // Function to remove an expense
+// Function to remove an expense
 function removeExpense(event) {
     var listItem = event.target.closest('li');
     var amount = parseFloat(listItem.dataset.amount);
 
     // Update total budget remaining
     var currentBudget = parseFloat(document.getElementById('budget-remaining').textContent);
-    var totalBudget = currentBudget + amount;
-    document.getElementById('budget-remaining').textContent = totalBudget.toFixed(2);
+    var remainingBudget = currentBudget + amount; // Subtract the amount
+    document.getElementById('budget-remaining').textContent = remainingBudget.toFixed(2);
 
     // Remove the expense from the list
     listItem.remove();
@@ -93,6 +106,7 @@ function removeExpense(event) {
     // Update the pie chart
     updatePieChart();
 }
+
 
 // Function to add an expense
 function addExpense() {
