@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #3f3636, #1f1a1a, #000000);
+    background: linear-gradient(to top, #3f3636, #1f1a1a, #000000);
     background-size: 100% 400%;
     animation: gradientScroll 1ms linear infinite;
     height: 100%;
@@ -12,19 +12,19 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #3f3636, #000000);
-    background-size: 100% 120%;
+    background: linear-gradient(to top, #3f3636, #000000);
+    background-size: 100% 100%;
     animation: gradientScroll 1ms linear infinite;
     height: 100%;
 }
 
 .container {
     max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 30px auto;
+    padding: 50px;
     background-color: #404040;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 h1, h2, h3 {
@@ -34,6 +34,7 @@ h1, h2, h3 {
 
 form {
     margin-bottom: 20px;
+    
 }
 
 .input-field {
