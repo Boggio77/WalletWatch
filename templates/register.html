@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="login.html" class="nav-btn">Login</a>
+        <a href="register.html" class="nav-btn">Register</a>
+    </div>
+    <div class="container">
+        <button onclick="location.href='index.html'" type="button">Home</button>
+        <h1>Register</h1>
+        <form action="/register" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" class="input-field">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="input-field">
+        </form>
+        <button type="submit">Register</button>
+    </div>
+</body>
+</html>

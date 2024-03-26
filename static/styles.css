@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #3f3636, #1f1a1a, #000000);
+    background-size: 100% 400%;
+    animation: gradientScroll 1ms linear infinite;
+    height: 100%;
+}
+
+.dashboard-page {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #3f3636, #000000);
+    background-size: 100% 120%;
+    animation: gradientScroll 1ms linear infinite;
+    height: 100%;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #404040;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #000000;
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: calc(100% - 22px); 
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+
+#expenses-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    color: #000000;
+}
+
+input[type="number"], input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.button-centered {
+    padding: 10px 20px;
+    background-color: #df1717;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto; /* Center horizontally */
+}
+
+
+button {
+    padding: 10px 20px;
+    background-color: #df1717;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #000000;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.nav-btn {
+    padding: 5px 10px;
+    color: #df1717;
+    text-decoration: none;
+    display: inline-block; /* Added */
+}
+
+.nav-btn:hover {
+    background-color: #000000;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
