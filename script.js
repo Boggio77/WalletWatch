@@ -90,7 +90,6 @@ window.onload = function() {
 };
 
 // Function to remove an expense
-// Function to remove an expense
 function removeExpense(event) {
     var listItem = event.target.closest('li');
     var amount = parseFloat(listItem.dataset.amount);
