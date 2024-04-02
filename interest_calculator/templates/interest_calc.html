@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interest Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+<body>
+    <h1>Interest Calculator</h1>
+    <form action="/calculate_interest" method="post">
+        <label for="rate">Interest Rate (%):</label>
+        <input type="number" id="rate" name="rate" step="0.01" required>
+        <br>
+        <label for="amount">Principal Amount:</label>
+        <input type="number" id="amount" name="amount" step="0.01" required>
+        <br>
+        <label for="frequency">Payment Frequency:</label>
+        <select id="frequency" name="frequency">
+            <option value="monthly">Monthly</option>
+            <option value="bi_weekly">Bi-weekly</option>
+            <option value="quarterly">Quarterly</option>
+            <option value="annually">Annually</option>
+        </select>
+        <br>
+        <label for="term">Term (years):</label>
+        <input type="number" id="term" name="term" min="1" required>
+        <br>
+        <label for="compound">Compound Type:</label>
+        <select id="compound" name="compound">
+            <option value="simple">Simple Interest</option>
+            <option value="compound">Compound Interest</option>
+        </select>
+        <br>
+        <input type="submit" value="Calculate Interest">
+    </form>
+    <h2>Calculated Values:</h2>
+    <p>Total Interest: {{ total_interest }}</p>
+    <p>Principal Plus Interest: {{ total_after_interest }}</p>
+    <p>Monthly Payment: {{ monthly_payment }}</p>
+</body>
+</html>
