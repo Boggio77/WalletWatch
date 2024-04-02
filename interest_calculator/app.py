@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import math
-
+from decimal import Decimal, ROUND_HALF_UP
 app = Flask(__name__, static_url_path='/static')
 
 @app.route('/')
@@ -9,12 +9,11 @@ def index():
 
 @app.route('/calculate_interest', methods=['POST'])
 def calculate_interest():
-    rate = round(float(request.form['rate']), 2)
-    amount = round(float(request.form['amount']), 2)
-    frequency = request.form['frequency']
-    term = int(request.form['term'])
-    compound = request.form['compound']
-
+    rate = Decimal(request.form.get('rate', '0')).quantize(Decimal('0.001'), rounding=ROUND_HALF_UP)
+    amount = Decimal(request.form.get('amount', '0')).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
+    frequency = request.form.get('frequency', '')
+    term = int(request.form.get('term', '0'))
+    rate = rate / 100
     if frequency == 'monthly':
         n = 12
     elif frequency == 'bi_weekly':
@@ -23,17 +22,19 @@ def calculate_interest():
         n = 4
     else:  # annually
         n = 1
+ # Calculate monthly payment
+    monthly_rate = rate / n
+    num_payments = term * n
+    monthly_payment = amount * monthly_rate / (1 - (1 + monthly_rate) ** -num_payments)
 
-    if compound == 'simple':
-        interest = amount * rate * term / 100
-    else:  # compound interest
-        interest = amount * (1 + rate / (n * 100)) ** (n * term) - amount
+    # Calculate total amount paid
+    total_payment = monthly_payment * num_payments
 
-    total_interest = round(amount * (1 + rate / (n * 100)) ** (n * term) - amount, 2)
-    total_after_interest = round(amount + total_interest, 2)
-    monthly_payment = round(total_after_interest / (term * n), 2)
+    # Calculate total interest paid
+    total_interest = total_payment - amount
 
-    return render_template('interest_calc.html', total_interest=total_interest, total_after_interest=total_after_interest, monthly_payment=monthly_payment)
+    return render_template('interest_calc.html', monthly_payment=round(monthly_payment, 2), 
+                           total_after_interest=round(total_payment, 2), total_interest=round(total_interest, 2))
 
 if __name__ == '__main__':
     app.run(debug=True)

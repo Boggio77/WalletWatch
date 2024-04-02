@@ -20,3 +20,27 @@ in the flask file, reference the style sheet with this line
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+
+
+
+
+
+
+##########################################################################################
+To test and run my code:
+##########################################################################################
+Download the interest_calculator package to your computer.
+
+Drag and drop the folder into VScode in an empty workspace
+
+open a python terminal and type: 'pip install flask'
+
+once flask is downloaded, in the terminal type: 'flask run'
+
+This will run a socket server to a testing project
+
+open a webpage and type: 'http://localhost:5000'
+
+this should bring you to the webpage allowing you to interact with the calculator
