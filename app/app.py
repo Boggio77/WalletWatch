@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
+from app.app import app
 import math
 from decimal import Decimal, ROUND_HALF_UP
+
 app = Flask(__name__, static_url_path='/static')
 
 @app.route('/')
