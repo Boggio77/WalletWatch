@@ -47,39 +47,6 @@ function updatePieChart() {
         amounts.push(amount);
     }
 
-// Create the pie chart
-window.pieChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-        labels: labels,
-        datasets: [{
-            data: amounts,
-            backgroundColor: [
-                'rgb(80, 80, 80)',   // Dark Grey
-                'rgb(128, 0, 0)',    // Dark Red
-                'rgb(139, 69, 19)',  // Saddle Brown
-                'rgb(46, 139, 87)',  // Sea Green
-                'rgb(139, 0, 0)',    // Dark Red
-                'rgb(0, 0, 139)',    // Dark Blue
-                'rgb(139, 0, 139)',  // Dark Magenta
-                'rgb(128, 128, 128)',// Dark Gray
-                'rgb(0, 139, 139)',  // Dark Cyan
-                'rgb(139, 0, 139)',  // Dark Magenta
-                'rgb(105, 105, 105)',// Dim Gray
-                'rgb(139, 69, 19)',  // Saddle Brown
-                'rgb(0, 100, 0)',    // Dark Green
-                'rgb(139, 0, 0)',    // Dark Red
-                'rgb(139, 0, 139)',  // Dark Magenta
-                'rgb(128, 128, 0)',  // Olive
-                'rgb(75, 0, 130)',   // Indigo
-                'rgb(160, 82, 45)',  // Sienna
-                'rgb(0, 0, 0)',      // Black
-                'rgb(0, 139, 139)',  // Dark Cyan
-                // Add more colors as needed
-            ],
-        }]
-    },
-});
 
 // Create the pie chart
 window.pieChart = new Chart(ctx, {
