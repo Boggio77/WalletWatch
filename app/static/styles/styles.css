@@ -144,32 +144,6 @@ button-r:hover {
     background-color: #000000;
 }
 
-.large-centered-button {
-    padding: 20px 40px; 
-    background-color: #df1717; 
-    color: #fff; 
-    border: none; 
-    border-radius: 30px; 
-    cursor: pointer; 
-    display: block; 
-    margin: 20px auto; 
-  }
-  
-  .large-centered-button {
-    position: relative; 
-    top: 25%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-  }
-  
- 
-  .large-centered-button-right {
-    position: relative; 
-    top: 25%; 
-    right: 25%; 
-    transform: translate(0, -50%); 
-  }
-  
 ul {
     list-style-type: none;
     padding: 0;
