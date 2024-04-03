@@ -1,13 +1,18 @@
 from flask import Flask, render_template, request
-from app.app import app
+
+from app import app
 import math
 from decimal import Decimal, ROUND_HALF_UP
 
 app = Flask(__name__, static_url_path='/static')
 
+from flask import render_template
+from app import app
+
 @app.route('/')
 def index():
-    return render_template('interest_calc.html')
+    return render_template('index.html')
+
 
 @app.route('/calculate_interest', methods=['POST'])
 def calculate_interest():
