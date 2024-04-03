@@ -26,7 +26,7 @@ body {
 
 .container {
     width: 800px;
-    height: 600px;
+    height: 100%;
     margin: 30px auto;
     margin-top: 70px;
     padding: 50px;
@@ -34,7 +34,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     font-family: 'Jost', sans-serif;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -54,10 +54,11 @@ body {
 .img-container {
     text-align: center;
     margin-top: 20px; 
-    display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
 
 h1, h2, h3 {
     color: #000000;
@@ -105,7 +106,6 @@ input[type="number"], input[type="text"] {
 
 .button-centered {
     padding: 10px 20px;
-    
     background-color: #df1717;
     color: #fff;
     border: none;
