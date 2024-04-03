@@ -11,6 +11,7 @@ body {
     animation: gradientScroll 1ms linear infinite;
     height: 100%;
     font-family: 'Jost', sans-serif;
+    position: relative;
 }
 
 .dashboard-page {
@@ -24,7 +25,8 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    width: 800px;
+    height: 600px;
     margin: 30px auto;
     margin-top: 70px;
     padding: 50px;
@@ -32,6 +34,21 @@ body {
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     font-family: 'Jost', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-pc {
+    width: 800px;
+    margin: 30px auto;
+    margin-top: 70px;
+    padding: 50px;
+    background-color: #404040;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    font-family: 'Jost', sans-serif;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .img-container {
@@ -113,6 +130,46 @@ button:hover {
     background-color: #000000;
 }
 
+button-r {
+    padding: 6px 13px;
+    background-color: #df1717;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    float: right;
+}
+
+button-r:hover {
+    background-color: #000000;
+}
+
+.large-centered-button {
+    padding: 20px 40px; 
+    background-color: #df1717; 
+    color: #fff; 
+    border: none; 
+    border-radius: 30px; 
+    cursor: pointer; 
+    display: block; 
+    margin: 20px auto; 
+  }
+  
+  .large-centered-button {
+    position: relative; 
+    top: 25%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+  }
+  
+ 
+  .large-centered-button-right {
+    position: relative; 
+    top: 25%; 
+    right: 25%; 
+    transform: translate(0, -50%); 
+  }
+  
 ul {
     list-style-type: none;
     padding: 0;
