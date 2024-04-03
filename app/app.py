@@ -9,6 +9,18 @@ app = Flask(__name__, static_url_path='/static')
 def index():
     return render_template('index.html')
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route('/interest_calc')
+def interest_calc():
+    return render_template('interest_calc.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 @app.route('/calculate_interest', methods=['POST'])
 def calculate_interest():
     rate = Decimal(request.form.get('rate', '0')).quantize(Decimal('0.001'), rounding=ROUND_HALF_UP)

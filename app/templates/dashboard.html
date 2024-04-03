@@ -10,12 +10,13 @@
 </head>
 <body class="dashboard-page">
     <div class="navbar">
-        <a href="index.html" class="nav-btn">Home</a>
-        <a href="login.html" class="nav-btn">Sign Up</a>
+        <a href="/" class="nav-btn">Home</a>
+        <a href="/login" class="nav-btn">Sign Up</a>
 
     </div>
     <div class="container">
-        <button onclick="location.href='index.html'" type="button">Home</button>
+        <button onclick="location.href='/'" type="button">Home</button>
+        <button onclick="location.href='/interest_calc'" class="button-centered" type="button">Interest Calculator</button>
         <h1>Expense Tracker</h1>
 
      <!-- Income Form -->
@@ -24,10 +25,7 @@
         <input type="number" id="income" name="income" value="">
         <button type="button" onclick="saveIncome()">Save Income</button>
     </form>
-
-
         <hr>
-
         <!-- Expenses List -->
         <h2>Your Expenses:</h2>
         <ul id="expenses-list">
@@ -51,6 +49,6 @@
         <!-- Pie Chart -->
         <canvas id="expense-pie-chart" width="400" height="400"></canvas>
     </div>
-    <script src="/script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
