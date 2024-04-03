@@ -1,18 +1,13 @@
 from flask import Flask, render_template, request
-
-from app import app
-import math
 from decimal import Decimal, ROUND_HALF_UP
+import math
+from app import app
 
 app = Flask(__name__, static_url_path='/static')
-
-from flask import render_template
-from app import app
 
 @app.route('/')
 def index():
     return render_template('index.html')
-
 
 @app.route('/calculate_interest', methods=['POST'])
 def calculate_interest():
@@ -29,7 +24,7 @@ def calculate_interest():
         n = 4
     else:  # annually
         n = 1
- # Calculate monthly payment
+    # Calculate monthly payment
     monthly_rate = rate / n
     num_payments = term * n
     monthly_payment = amount * monthly_rate / (1 - (1 + monthly_rate) ** -num_payments)
