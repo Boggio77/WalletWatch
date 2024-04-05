@@ -11,25 +11,26 @@
 <body class="dashboard-page">
     <div class="navbar">
         <a href="/" class="nav-btn">Home</a>
-        <!--<a href="/login" class="nav-btn">Sign Up/Login</a> -->
-
     </div>
     <div class="container-pc">
         <button onclick="location.href='/'" type="button">Home</button>
         <h1>Expense Tracker</h1>
 
-     <!-- Income Form -->
-     <form id="income-form">
-        <label for="income">Add Income:</label>
-        <input type="number" id="income" name="income" value="">
-        <button type="button" onclick="saveIncome()">Save Income</button>
-    </form>
+        <!-- Income List -->
+        <h2>Your Income:</h2>
+        <ul id="income-list"></ul>
+        
+        <!-- Income Form -->
+        <form id="income-form">
+            <label for="income">Add Income:</label>
+            <input type="number" id="income" name="income" value="">
+            <button type="button" onclick="saveIncome()">Save Income</button>
+        </form>
         <hr>
+
         <!-- Expenses List -->
         <h2>Your Expenses:</h2>
-        <ul id="expenses-list">
-      
-        </ul>
+        <ul id="expenses-list"></ul>
 
         <!-- Add Expense Form -->
         <form id="add-expense-form">
