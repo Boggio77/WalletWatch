@@ -51,4 +51,4 @@ def calculate_interest():
                            total_after_interest=round(total_payment, 2), total_interest=round(total_interest, 2))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False,host='0.0.0.0')
