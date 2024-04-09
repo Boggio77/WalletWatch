@@ -1,4 +1,4 @@
-//archspec
+
 blinker==1.7.0
 boltons
 Brotli 
