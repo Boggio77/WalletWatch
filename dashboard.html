@@ -13,19 +13,19 @@
 <body class="dashboard-page">
     <div class="navbar">
         <a href="index.html" class="nav-btn">Home</a>
-        <!--<a href="/login" class="nav-btn">Sign Up/Login</a> -->
-
+        <a href="interest_calc.html" class="nav-btn">Interest Calculator</a>
+        <a href="blogs.html" class="nav-btn">Financial Tips</a>
+        <a href="login.html" class="nav-btn">Login/Signup</a>
     </div>
     <div class="container-pc">
         <button onclick="location.href='index.html'" type="button">Home</button>
         <h1>Expense Tracker</h1>
-
-     <!-- Income Form -->
-     <form id="income-form">
-        <label for="income">Add Income:</label>
-        <input type="number" id="income" name="income" value="" min="1" required>
-        <button type="button" onclick="saveIncome()">Save Income</button>
-    </form>
+        <!-- Income Form -->
+        <form id="income-form">
+            <label for="income">Add Income:</label>
+            <input type="number" id="income" name="income" value="" min="1" required>
+            <button type="button" onclick="saveIncome()">Save Income</button>
+        </form>
         <hr>
         <!-- Expenses List -->
         <h2>Your Expenses:</h2>
@@ -53,3 +53,4 @@
     <script src="script/script.js"></script>
 </body>
 </html>
+
