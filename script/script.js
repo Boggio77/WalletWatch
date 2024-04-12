@@ -177,36 +177,48 @@ function calculateTotal() {
 
     const interestRateDecimal = interestRate / 100;
 
+    let factor;
+
     let totalPeriods;
     switch (frequency.toLowerCase()) {
-        case 'yearly':
+        case 'anually':
+            factor = 1;
             totalPeriods = termLength;
             break;
         case 'semi-annually':
+            factor = 2
             totalPeriods = termLength * 2;
             break;
         case 'quarterly':
+            factor = 4
             totalPeriods = termLength * 4;
             break;
         case 'monthly':
+            factor = 12
             totalPeriods = termLength * 12;
             break;
         default:
             throw new Error('Invalid frequency provided.');
     }
+    console.log('factor', factor);
+    console.log('totalPeriods', totalPeriods);
 
-    const monthlyInterestRate = interestRateDecimal / 12;
+    const periodInterestRate = interestRateDecimal / factor;
+    console.log('periodInterestRate', periodInterestRate);
 
-    const monthlyPayment = principal * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalPeriods)) / (Math.pow(1 + monthlyInterestRate, totalPeriods) - 1);
+    const periodPayment = principal * (periodInterestRate * Math.pow(1 + periodInterestRate, totalPeriods)) / (Math.pow(1 + periodInterestRate, totalPeriods) - 1);
+    console.log('periodPayment', periodPayment);
 
-    const totalPayment = monthlyPayment * totalPeriods;
+    const totalPayment = periodPayment * totalPeriods;
+    console.log('totalPayment', totalPayment);
 
     const totalInterest = totalPayment - principal;
+    console.log('totalInterest', totalInterest);
 
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = `
         <h3>Results:</h3>
-        <p>Monthly Payment: $${monthlyPayment.toFixed(2)}</p>
+        <p>Each Payment: $${periodPayment.toFixed(2)}</p>
         <p>Principal + Interest: $${totalPayment.toFixed(2)}</p>
         <p>Total Interest Paid: $${totalInterest.toFixed(2)}</p>
     `;
