@@ -27,7 +27,7 @@
         <!-- Income Form -->
         <form id="income-form">
             <label for="income">Add Income:</label>
-            <input type="number" id="income" name="income" value="" min="1" required>
+            <input type="number" id="income" name="income" value="" placeholder="3000" min="1" required>
             <button type="button" onclick="saveIncome()">Save Income</button>
         </form>
 
@@ -39,9 +39,9 @@
         <!-- Add Expense Form -->
         <form id="add-expense-form">
             <label for="title">Expense Title:</label>
-            <input type="text" id="title" name="title" required>
+            <input type="text" id="title" name="title" placeholder="Rent" required>
             <label for="amount">Amount:</label>
-            <input type="number" id="amount" name="amount" min="1" required>
+            <input type="number" id="amount" name="amount" placeholder="1000"min="1" required>
             <button type="button" onclick="addExpense()">Add Expense</button>
         </form>
 
@@ -65,10 +65,10 @@
         <h1>Interest Calculator</h1>
         <form onsubmit="calculateTotal(); return false;">
             <label for="interestRate">Interest Rate (%):</label>
-            <input type="number" id="interestRate" name="rate" step="0.01" required>
+            <input type="number" id="interestRate" name="rate" placeholder="3.0" step="0.01" required>
             <br>
             <label for="principal">Principal Amount:</label>
-            <input type="number" id="principal" name="amount" required>
+            <input type="number" id="principal" name="amount" placeholder="3000"required>
             <br>
             <label for="frequency">Payment Frequency:</label>
             <select id="frequency" name="frequency">
@@ -79,7 +79,7 @@
             </select>
             <br>
             <label for="termLength">Term (years):</label>
-            <input type="number" id="termLength" name="term" min="1" required>
+            <input type="number" id="termLength" name="term" placeholder="5" min="1" required>
             <br>
             <input class="button" type="submit" value="Calculate Interest">
         </form>
