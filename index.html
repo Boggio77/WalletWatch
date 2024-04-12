@@ -6,29 +6,85 @@
     <title>Expense Tracker</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="icon" href="images/walletwatch.png" type="image/x-icon">
     <link rel="shortcut icon" href="images/walletwatch.png" type="image/x-icon">
 </head>
 <body>
     <div class="navbar">
         <a href="index.html" class="nav-btn">Home</a>
-        <!--<a href="/login" class="nav-btn">Sign Up/Login</a> -->
+        <a href="/login" class="nav-btn">Sign Up/Login</a> 
     </div>
     <div class="container">
-        <h1>WalletWatch</h1>
-        <div class="img-container">
-            <img src="images/walletwatch.png" alt="Wallet Watch Logo">
-        </div>
-        <button onclick="location.href='dashboard.html'" class="button-centered" type="button">Dashboard</button>
-        <p>This HTML document creates a dashboard page for an expense tracker web application. It includes a navigation bar with links to home and sign-up pages, forms to add income and expenses, displays the list of expenses, calculates total budget remaining, and visualizes expenses using a pie chart. JavaScript functions are linked for interactivity.</p>
-        <button onclick="location.href='interest_calc.html'" class="button-centered" type="button">Interest Calculator</button>
-        <p>This HTML document creates an interest calculator web application. It includes a navigation bar with links to the home page and sign-up/login page. The main content consists of a form to calculate interest based on specified parameters such as interest rate, principal amount, payment frequency, and term. Upon submission, calculated values are displayed including total interest, principal plus interest, and monthly payment.</p> 
-        <button onclick="location.href='blogs.html'" class="button-centered" type="button">Financial Tips</button> 
-        <p>This HTML code sets up a webpage titled "Financial Tips," featuring a navigation bar with a "Home" link. It includes several sections with financial advice articles, each contained within a subcontainer and featuring a clickable title styled as a button. The articles cover topics such as financial planning, savings strategies, budgeting tips, and discussions around financial security in relationships.</p>  
         <div class="img-container"> 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/cUy845O5v5o?si=n1VEOuMCzJkyVUPB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <p>A video illustrating the functionality of our budget tracker, detailing its features such as expense tracking, income management, budget calculations, and visualization through pie charts, providing a comprehensive overview of its operation and benefits.</p>
+            <iframe width="490" height="315" src="https://www.youtube.com/embed/cUy845O5v5o?si=n1VEOuMCzJkyVUPB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
     </div>
+
+    <div class="container-expense">
+        <h1>Expense Tracker</h1>
+
+        <!-- Income Form -->
+        <form id="income-form">
+            <label for="income">Add Income:</label>
+            <input type="number" id="income" name="income" value="" min="1" required>
+            <button type="button" onclick="saveIncome()">Save Income</button>
+        </form>
+
+        <!-- Income List -->
+         <div class="income-container">
+             <ul id="income-list"></ul>
+         </div>
+       
+        <!-- Add Expense Form -->
+        <form id="add-expense-form">
+            <label for="title">Expense Title:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" min="1" required>
+            <button type="button" onclick="addExpense()">Add Expense</button>
+        </form>
+
+        <!-- Expenses List -->
+        <ul id="expenses-list"></ul>
+    
+    
+        <!-- Total Budget Remaining -->
+        <h3>Total Budget Remaining: $<span id="budget-remaining">0.00</span></h3>
+    
+        <div class="expense-details">
+        
+        </div>
+    </div>
+
+    <div class="pie-chart-container">
+        <canvas id="expense-pie-chart"></canvas>
+    </div>
+    
+    <div class="container-calc">
+        <h1>Interest Calculator</h1>
+        <form onsubmit="calculateTotal(); return false;">
+            <label for="interestRate">Interest Rate (%):</label>
+            <input type="number" id="interestRate" name="rate" step="0.01" required>
+            <br>
+            <label for="principal">Principal Amount:</label>
+            <input type="number" id="principal" name="amount" required>
+            <br>
+            <label for="frequency">Payment Frequency:</label>
+            <select id="frequency" name="frequency">
+                <option value="monthly">Monthly</option>
+                <option value="bi_weekly">Bi-weekly</option>
+                <option value="quarterly">Quarterly</option>
+                <option value="annually">Annually</option>
+            </select>
+            <br>
+            <label for="termLength">Term (years):</label>
+            <input type="number" id="termLength" name="term" min="1" required>
+            <br>
+            <input class="button" type="submit" value="Calculate Interest">
+        </form>
+        <div id="results"></div>
+    </div>
+    <script src="script/script.js"></script>
 </body>
 </html>
