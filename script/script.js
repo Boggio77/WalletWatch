@@ -181,7 +181,7 @@ function calculateTotal() {
 
     let totalPeriods;
     switch (frequency.toLowerCase()) {
-        case 'anually':
+        case 'annually':
             factor = 1;
             totalPeriods = termLength;
             break;
