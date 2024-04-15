@@ -20,11 +20,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    background: rgba(128, 128, 128, 0.1);
+    background: rgba(128, 128, 128, 0.2);
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2.7px);
-    -webkit-backdrop-filter: blur(11.7px);
+    -webkit-backdrop-filter: blur(2.7px);
     border: 1px solid rgba(255, 255, 255, 0.34);
     font-family: 'Jost', sans-serif;
     overflow: hidden;
@@ -33,7 +33,7 @@ body {
 .img-container {
     order: 2; 
     text-align: center;
-    margin-top: 20px; 
+    margin: 8px;
 }
 
 .container iframe {
@@ -52,7 +52,7 @@ body {
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2.7px);
-    -webkit-backdrop-filter: blur(11.7px);
+    -webkit-backdrop-filter: blur(2.7px);
     border: 1px solid rgba(255, 255, 255, 0.34);
     font-family: 'Jost', sans-serif;
 }
@@ -70,7 +70,7 @@ body {
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2.7px);
-    -webkit-backdrop-filter: blur(2.3em);
+    -webkit-backdrop-filter: blur(2.7px);
     border: 1px solid rgba(255, 255, 255, 0.34);
     font-family: 'Jost', sans-serif;
 }
@@ -86,7 +86,7 @@ body {
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2.7px);
-    -webkit-backdrop-filter: blur(11.7px);
+    -webkit-backdrop-filter: blur(2.7px);
     border: 1px solid rgba(255, 255, 255, 0.34);
     font-family: 'Jost', sans-serif;
 }
@@ -102,7 +102,7 @@ body {
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2.7px);
-    -webkit-backdrop-filter: blur(11.7px);
+    -webkit-backdrop-filter: blur(2.7px);
     border: 1px solid rgba(128, 128, 128, 0.34);
     font-family: 'Jost', sans-serif;
 }
@@ -213,6 +213,17 @@ ul {
     background-color: #000000;
     color: white;
 }
+
+.logo-container {
+    margin-left: 8px; 
+}
+
+.logo {
+    width: 50px; /* Adjust size as needed */
+    height: auto; /* To maintain aspect ratio */
+    vertical-align: middle; /* Align with the text vertically */
+}
+
 
 hr {
     border: none;
