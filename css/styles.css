@@ -219,9 +219,9 @@ ul {
 }
 
 .logo {
-    width: 50px; /* Adjust size as needed */
-    height: auto; /* To maintain aspect ratio */
-    vertical-align: middle; /* Align with the text vertically */
+    width: 50px; 
+    height: auto; 
+    vertical-align: middle; 
 }
 
 
