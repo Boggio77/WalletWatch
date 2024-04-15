@@ -59,7 +59,7 @@ body {
 
 .pie-chart-container {
     position: absolute;
-    bottom: 25%;
+    bottom: 30%;
     left: 50%;
     transform: translate(-50%, 50%);
     max-width: 80%;
