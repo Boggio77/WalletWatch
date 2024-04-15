@@ -6,33 +6,47 @@ body {
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-    background-image: url('../images/pexels-photo-1456304.webp'); 
+    background-image: url('../images/clouds.jpg'); 
     background-size: cover; 
     background-repeat: no-repeat;
 }
 
 .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 2px;
     width: 100%;
-    background-color: #000000;
     padding: 15px;
-  }
-  
-  .nav-btn {
-    margin-right: 20px;
-    text-decoration: none;
-    color: #D2042D;
-  }
+    z-index: 999;
+}
 
-  .nav-btn:hover {
-    color: #695d5d;
+.navbar a {
+    margin-right: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #1e5c86;
+}
+
+.navbar a:hover {
+    color: #ffffff;
     font-size: large;
+}
+
+.nav-btn {
+    margin-right: 20px;
+}
+
+.navbar a.active {
+    background-color: #000000;
+    color: white;
 }
   
 .main{
 	width: 350px;
+	min-width: 300px;
 	height: 500px;
 	overflow: hidden;
 	background: rgba(128, 128, 128, 0.1);
@@ -40,7 +54,7 @@ body {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(11.7px);
     -webkit-backdrop-filter: blur(11.7px);
-    border: 1px solid rgba(128, 128, 128, 0.34);
+    border: 1px solid rgba(255, 255, 255, 0.34);
 }
 
 #chk{
@@ -115,4 +129,10 @@ button:hover{
 }
 #chk:checked ~ .signup label{
 	transform: scale(.6);
+}
+
+h1 {
+	color: #1e5c86;
+    text-align: center;
+    margin: 2px;
 }

@@ -123,6 +123,12 @@ h1, h2, h3 {
     margin: 2px;
 }
 
+.p {
+    text-align: center;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
 form {
     margin-bottom: 20px; 
 }
@@ -167,8 +173,9 @@ input[type="number"], input[type="text"] {
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    display: block;
-    margin: auto; 
+    display: inline-block;
+    margin: auto;
+    text-decoration: none;
 }
 
 button:hover, button-r:hover {
@@ -197,7 +204,7 @@ ul {
     margin-right: 20px;
     margin-left: 20px;
     text-decoration: none;
-    color: #000000;
+    color:#1e5c86;
 }
 
 .navbar a:hover {
