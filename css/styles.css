@@ -63,8 +63,6 @@ body {
     left: 50%;
     transform: translate(-50%, 50%);
     max-width: 80%;
-    width: 325px;
-    height: 325px;
     padding: 20px;
     background: rgba(128, 128, 128, 0.1);
     border-radius: 16px;
@@ -73,6 +71,14 @@ body {
     -webkit-backdrop-filter: blur(2.7px);
     border: 1px solid rgba(255, 255, 255, 0.34);
     font-family: 'Jost', sans-serif;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+canvas {
+    justify-content: center;
+    align-items:center;
 }
 
 .container-calc {
