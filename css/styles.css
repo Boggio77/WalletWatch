@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
     min-height: 100vh;
     background-image: url('../images/pexels-photo-1456304.webp'); 
     background-size: cover; 
@@ -10,73 +9,20 @@ body {
 }
 
 .container {
-    position: fixed;
-    top: 50%;
-    left: 61%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    max-width: calc(600px - 40px);
-    padding: 20px;
+    max-width: calc(700px - 40px);
+    padding: 30px;
     background: rgba(128, 128, 128, 0.1);
-    border-radius: 16px;
+    border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.7px);
+    backdrop-filter: blur(2.7px);
     -webkit-backdrop-filter: blur(11.7px);
     border: 1px solid rgba(128, 128, 128, 0.34);
     font-family: 'Jost', sans-serif;
-}
-
-.container-expense {
-    position: fixed;
-    top: 50%;
-    left: 5%;
-    transform: translate(0, -50%);
-    max-width: calc(500px - 40px);
-    padding: 20px;
-    background: rgba(128, 128, 128, 0.1);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.7px);
-    -webkit-backdrop-filter: blur(11.7px);
-    border: 1px solid rgba(128, 128, 128, 0.34);
-    font-family: 'Jost', sans-serif;
-}
-
-.expense-details {
-    display: flex;
-}
-
-.pie-chart-container {
-    position: fixed;
-    top: 50%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-    max-width: fit-content;
-    width: 500px;
-    height: 325px;
-    padding: 20px;
-    background: rgba(128, 128, 128, 0.1);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.7px);
-    -webkit-backdrop-filter: blur(11.7px);
-    border: 1px solid rgba(255, 0, 0, 0.34);
-    font-family: 'Jost', sans-serif;
-}
-
-.container-calc {
-    position: fixed;
-    top: 50%;
-    right: 5%;
-    transform: translate(0, -50%);
-    max-width: calc(400px - 40px);
-    padding: 20px;
-    background: rgba(128, 128, 128, 0.1);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.7px);
-    -webkit-backdrop-filter: blur(11.7px);
-    border: 1px solid rgba(128, 128, 128, 0.34);
-    font-family: 'Jost', sans-serif;
+    overflow: hidden;
 }
 
 .img-container {
@@ -85,11 +31,59 @@ body {
     margin-top: 20px; 
 }
 
+.container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.container-expense {
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    transform: translate(50, -50%);
+    max-width: calc(500px - 40px);
+    padding: 20px;
+    background: rgba(128, 128, 128, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.7px);
+    -webkit-backdrop-filter: blur(11.7px);
+    border: 1px solid rgba(128, 128, 128, 0.34);
+    font-family: 'Jost', sans-serif;
+}
+
 .pie-chart-container {
     position: absolute;
-    top: 50%;
-    right: 20px; /* Adjust the distance from the right side */
-    transform: translateY(-50%);
+    bottom: 25%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    max-width: 80%;
+    width: 325px;
+    height: 325px;
+    padding: 20px;
+    background: rgba(128, 128, 128, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.7px);
+    -webkit-backdrop-filter: blur(11.7px);
+    border: 1px solid rgba(255, 0, 0, 0.34);
+    font-family: 'Jost', sans-serif;
+}
+
+.container-calc {
+    position: absolute;
+    top: 25%;
+    right: 15%;
+    transform: translate(50, -50%);
+    max-width: calc(400px - 40px);
+    padding: 20px;
+    background: rgba(128, 128, 128, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.7px);
+    -webkit-backdrop-filter: blur(11.7px);
+    border: 1px solid rgba(128, 128, 128, 0.34);
+    font-family: 'Jost', sans-serif;
 }
 
 #results {
@@ -102,30 +96,26 @@ body {
     background: rgba(128, 128, 128, 0.1);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.7px);
+    backdrop-filter: blur(2.7px);
     -webkit-backdrop-filter: blur(11.7px);
     border: 1px solid rgba(128, 128, 128, 0.34);
     font-family: 'Jost', sans-serif;
 }
 
-
-
 .subcontainer {
     margin: 30px auto;
-    margin-top: 100px; /* Adjusted to provide space below the navbar */
-    padding: 50px;
-    background-color: #353232;
+    margin-top: 10px;
+    padding: 10px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     font-family: 'Jost', sans-serif;
     justify-content: space-between;
     align-items: center;
 }
 
-
 h1, h2, h3 {
     color: #df1717;
     text-align: center;
+    margin: 2px;
 }
 
 form {
@@ -173,7 +163,7 @@ input[type="number"], input[type="text"] {
     border-radius: 30px;
     cursor: pointer;
     display: block;
-    margin: auto; /* Center horizontally */
+    margin: auto; 
 }
 
 button:hover, button-r:hover {
@@ -188,25 +178,26 @@ ul {
 
 .navbar {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #000000;
+    background-image: linear-gradient(to bottom, #0e1d27, #fff);
     padding: 15px;
     z-index: 999;
 }
 
 .navbar a {
     margin-right: 20px;
+    margin-left: 20px;
     text-decoration: none;
-    color: #D2042D;
+    color: #000000;
 }
 
 .navbar a:hover {
-    color: #695d5d;
+    color: #ffffff;
     font-size: large;
 }
 
@@ -215,7 +206,7 @@ ul {
 }
 
 .navbar a.active {
-    background-color: #df1717;
+    background-color: #000000;
     color: white;
 }
 
@@ -223,4 +214,24 @@ hr {
     border: none;
     border-top: 1px solid #ccc;
     margin: 20px 0;
+}
+
+@media only screen and (max-width: 1450px) {
+    .container,
+    .container-expense,
+    .container-calc,
+    .pie-chart-container,
+    .navbar {
+        position: static;
+        max-width: calc(100% - 40px);
+        margin: 20px;
+        left: auto;
+        top: auto;
+        transform: none;
+        
+    }
+
+    .container-calc {
+        top: 25%;
+    }
 }
