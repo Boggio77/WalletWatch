@@ -1,3 +1,4 @@
+// Function to update the pie chart
 function updatePieChart() {
     // Get the canvas element
     var ctx = document.getElementById('expense-pie-chart').getContext('2d');
@@ -67,12 +68,10 @@ window.onload = function() {
     updatePieChart();
 };
 
-
-
 // Function to save income
 function saveIncome() {
     var incomeAmount = parseFloat(document.getElementById('income').value);
-    if (!isNaN(incomeAmount)) {
+    if (!isNaN(incomeAmount) && incomeAmount >= 0 && incomeAmount <= 1000000000) {
         var incomeList = document.getElementById('income-list');
         var listItem = document.createElement('li');
         listItem.textContent = 'Income: $' + incomeAmount.toFixed(2);
@@ -95,7 +94,7 @@ function saveIncome() {
         // Update the pie chart
         updatePieChart();
     } else {
-        alert('Please enter a valid income amount.');
+        alert('Please enter a valid income amount between 0 and 1,000,000,000.');
     }
 }
 
@@ -137,7 +136,7 @@ function removeExpense(event) {
 function addExpense() {
     var title = document.getElementById('title').value;
     var amount = parseFloat(document.getElementById('amount').value);
-    if (!isNaN(amount) && title.trim() !== '') {
+    if (!isNaN(amount) && amount >= 0 && amount <= 1000000 && title.trim() !== '') {
         var expensesList = document.getElementById('expenses-list');
         var listItem = document.createElement('li');
         listItem.textContent = title + ': $' + amount.toFixed(2);
@@ -161,65 +160,67 @@ function addExpense() {
         document.getElementById('title').value = '';
         document.getElementById('amount').value = '';
     } else {
-        alert('Please enter a valid expense title and amount.');
+        alert('Please enter a valid expense title and amount between 0 and 1,000,000.');
     }
 }
 
 // Function to calculate total
 function calculateTotal() {
     const principal = parseFloat(document.getElementById('principal').value);
-
     const interestRate = parseFloat(document.getElementById('interestRate').value);
-
     const termLength = parseFloat(document.getElementById('termLength').value);
-
     const frequency = document.getElementById('frequency').value;
 
-    const interestRateDecimal = interestRate / 100;
+    if (
+        !isNaN(principal) && principal >= 0 && principal <= 1000000000 &&
+        !isNaN(interestRate) && interestRate >= 0 && interestRate <= 1000000000 &&
+        !isNaN(termLength) && termLength >= 0 && termLength <= 1000000000 &&
+        (frequency.toLowerCase() === 'annually' ||
+        frequency.toLowerCase() === 'semi-annually' ||
+        frequency.toLowerCase() === 'quarterly' ||
+        frequency.toLowerCase() === 'monthly')
+    ) {
+        const interestRateDecimal = interestRate / 100;
 
-    let factor;
+        let factor;
+        let totalPeriods;
+        switch (frequency.toLowerCase()) {
+            case 'annually':
+                factor = 1;
+                totalPeriods = termLength;
+                break;
+            case 'semi-annually':
+                factor = 2
+                totalPeriods = termLength * 2;
+                break;
+            case 'quarterly':
+                factor = 4
+                totalPeriods = termLength * 4;
+                break;
+            case 'monthly':
+                factor = 12
+                totalPeriods = termLength * 12;
+                break;
+            default:
+                throw new Error('Invalid frequency provided.');
+        }
 
-    let totalPeriods;
-    switch (frequency.toLowerCase()) {
-        case 'annually':
-            factor = 1;
-            totalPeriods = termLength;
-            break;
-        case 'semi-annually':
-            factor = 2
-            totalPeriods = termLength * 2;
-            break;
-        case 'quarterly':
-            factor = 4
-            totalPeriods = termLength * 4;
-            break;
-        case 'monthly':
-            factor = 12
-            totalPeriods = termLength * 12;
-            break;
-        default:
-            throw new Error('Invalid frequency provided.');
+        const periodInterestRate = interestRateDecimal / factor;
+
+        const periodPayment = principal * (periodInterestRate * Math.pow(1 + periodInterestRate, totalPeriods)) / (Math.pow(1 + periodInterestRate, totalPeriods) - 1);
+
+        const totalPayment = periodPayment * totalPeriods;
+
+        const totalInterest = totalPayment - principal;
+
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = `
+            <h3>Results:</h3>
+            <p>Each Payment: $${periodPayment.toFixed(2)}</p>
+            <p>Principal + Interest: $${totalPayment.toFixed(2)}</p>
+            <p>Total Interest Paid: $${totalInterest.toFixed(2)}</p>
+        `;
+    } else {
+        alert('Please enter valid values within 0 and 1,000,000.');
     }
-    console.log('factor', factor);
-    console.log('totalPeriods', totalPeriods);
-
-    const periodInterestRate = interestRateDecimal / factor;
-    console.log('periodInterestRate', periodInterestRate);
-
-    const periodPayment = principal * (periodInterestRate * Math.pow(1 + periodInterestRate, totalPeriods)) / (Math.pow(1 + periodInterestRate, totalPeriods) - 1);
-    console.log('periodPayment', periodPayment);
-
-    const totalPayment = periodPayment * totalPeriods;
-    console.log('totalPayment', totalPayment);
-
-    const totalInterest = totalPayment - principal;
-    console.log('totalInterest', totalInterest);
-
-    const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = `
-        <h3>Results:</h3>
-        <p>Each Payment: $${periodPayment.toFixed(2)}</p>
-        <p>Principal + Interest: $${totalPayment.toFixed(2)}</p>
-        <p>Total Interest Paid: $${totalInterest.toFixed(2)}</p>
-    `;
 }
