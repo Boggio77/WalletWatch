@@ -68,7 +68,7 @@ body {
 }
 
 label{
-	color: #D2042D;
+	color: #1e5c86;
 	font-size: 2.3em;
 	justify-content: center;
 	display: flex;
@@ -96,7 +96,7 @@ button{
 	justify-content: center;
 	display: block;
 	color: #000000;
-	background: #D2042D;
+	background: #0a95c0;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -107,17 +107,17 @@ button{
 	cursor: pointer;
 }
 button:hover{
-	background: #636363;
+	background: #1e5c86;
 }
 .login{
 	height: 460px;
-	background: #000000;
+	background: #1e5c86;
 	border-radius: 20% / 10%;
 	transform: translateY(-180px);
 	transition: .8s ease-in-out;
 }
 .login label{
-	color: #D2042D;
+	color: #000000;
 	transform: scale(.6);
 }
 
