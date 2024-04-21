@@ -56,7 +56,7 @@ function updatePieChart() {
         options: {
             legend: {
                 labels: {
-                    fontColor: 'rgb(255, 255, 255)' // Supposed to set label for pie chart sections to white but does not work.
+                    fontColor: 'rgb(0, 0, 0)' // Supposed to set label for pie chart sections to white but does not work.
                 }
             }
         }
