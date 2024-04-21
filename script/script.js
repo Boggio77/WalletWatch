@@ -172,9 +172,9 @@ function calculateTotal() {
     const frequency = document.getElementById('frequency').value;
 
     if (
-        !isNaN(principal) && principal >= 0 && principal <= 1000000000 &&
-        !isNaN(interestRate) && interestRate >= 0 && interestRate <= 1000000000 &&
-        !isNaN(termLength) && termLength >= 0 && termLength <= 1000000000 &&
+        !isNaN(principal) && principal >= 0 && principal <= 1000000 &&
+        !isNaN(interestRate) && interestRate >= 0 && interestRate <= 100 &&
+        !isNaN(termLength) && termLength >= 0 && termLength <= 100 &&
         (frequency.toLowerCase() === 'annually' ||
         frequency.toLowerCase() === 'semi-annually' ||
         frequency.toLowerCase() === 'quarterly' ||
@@ -221,6 +221,6 @@ function calculateTotal() {
             <p>Total Interest Paid: $${totalInterest.toFixed(2)}</p>
         `;
     } else {
-        alert('Please enter valid values within 0 and 1,000,000.');
+        alert('Please enter values for interest rate between 0-100\nPlease enter values for Principle amount between 0-1,000,000\nPlease enter values for term length between 0-100');
     }
 }
