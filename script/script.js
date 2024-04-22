@@ -134,9 +134,15 @@ function removeExpense(event) {
 
 // Function to add an expense
 function addExpense() {
-    var title = document.getElementById('title').value;
+    var title = document.getElementById('title').value.trim();
     var amount = parseFloat(document.getElementById('amount').value);
-    if (!isNaN(amount) && amount >= 0 && amount <= 1000000 && title.trim() !== '') {
+    
+    // Ensure the title is within the character limit
+    if (title.length > 20) {
+        title = title.substring(0, 20); // Truncate the title
+    }
+    
+    if (!isNaN(amount) && amount >= 0 && amount <= 1000000 && title !== '') {
         var expensesList = document.getElementById('expenses-list');
         var listItem = document.createElement('li');
         listItem.textContent = title + ': $' + amount.toFixed(2);
@@ -160,9 +166,10 @@ function addExpense() {
         document.getElementById('title').value = '';
         document.getElementById('amount').value = '';
     } else {
-        alert('Please enter a valid expense title and amount between 0 and 1,000,000.');
+        alert('Please enter a valid expense title (within 15 characters) and amount between 0 and 1,000,000.');
     }
 }
+
 
 // Function to calculate total
 function calculateTotal() {
